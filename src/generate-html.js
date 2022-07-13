@@ -1,4 +1,13 @@
+import fs from 'fs';
+
+// creates html file and copies css
 export const generatePage = employees => {
+     writeHtml(generateHtml(employees))
+          .then(copyCss);
+};
+
+// html generator
+const generateHtml = employees => {
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +27,9 @@ export const generatePage = employees => {
      </main>
 </body>
 </html>`;   
-}
+};
 
+// html generator for employee cards
 const generateCards = employees => {
      let cardsHtml = '';
 
@@ -28,8 +38,7 @@ const generateCards = employees => {
           let info;
           let infoDesc;
           
-          // determine role of employee
-          // info is dependant on role:
+          // determine role of employee where info is dependant on:
           // Managers -> Office Number
           // Engineer -> Github
           // Intern -> School
@@ -59,5 +68,39 @@ const generateCards = employees => {
      });
 
      return cardsHtml;
+};
+
+const writeHtml = html => {
+     return new Promise((resolve, reject) => {
+          fs.writeFile('./dist/index.html', html, e => {
+              // if there's an error, reject the Promise and send error
+              if (e) {
+                  reject(e);
+                  return;
+              }
+  
+              // if okay
+              resolve({
+                  ok: true,
+                  message: 'File Created!'
+              });
+          });
+      });
+};
+
+const copyCss = () => {
+     return new Promise((resolve, reject) => {
+          fs.copyFile('./src/style.css', './dist/style.css', e => {
+              if (e) {
+                  reject(e);
+                  return;
+              }
+  
+              resolve({
+                  ok: true,
+                  message: 'File  copied'
+              })
+          })
+      })
 }
 
