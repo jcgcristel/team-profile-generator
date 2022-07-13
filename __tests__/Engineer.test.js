@@ -1,7 +1,7 @@
 import Engineer from "../lib/Engineer";
 
 test('create engineer object', () => {
-    const engineer = new Engineer('John Doe', 1,' john.doe@test.com', 'johndoe');
+    const engineer = new Engineer('John Doe', 1,'john.doe@test.com', 'johndoe');
 
     expect(engineer.name).toBe('John Doe');
     expect(engineer.id).toBe(1);
@@ -10,7 +10,7 @@ test('create engineer object', () => {
 });
 
 test('get engineer properties from employee properties', () => {
-    const engineer = new Engineer('John Doe', 1,' john.doe@test.com', 'johndoe');
+    const engineer = new Engineer('John Doe', 1,'john.doe@test.com', 'johndoe');
 
     expect(engineer.getName()).toBe('John Doe');
     expect(engineer.getId()).toBe(1);
@@ -18,13 +18,13 @@ test('get engineer properties from employee properties', () => {
 });
 
 test('get engineer github username', () => {
-    const engineer = new Engineer('John Doe', 1,' john.doe@test.com', 'johndoe');
+    const engineer = new Engineer('John Doe', 1,'john.doe@test.com', 'johndoe');
 
     expect(engineer.getGithub()).toBe('johndoe');
 });
 
 test('get engineer role', () => {
-    const engineer = new Engineer('John Doe', 1,' john.doe@test.com', 'johndoe');
+    const engineer = new Engineer('John Doe', 1,'john.doe@test.com', 'johndoe');
 
     expect(engineer.getRole()).toBe('Engineer');
 });
