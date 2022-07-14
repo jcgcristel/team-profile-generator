@@ -44,7 +44,7 @@ These file can be found in the **/dist** folder.
 ![Site Preview](/images/site-prev.png)
 
 ### Demo
-https://youtu.be/FuGfBxWBgho
+https://youtu.be/pdYcrygcFxo
 
 ## Questions
 [jcgcristel's GitHub](https://github.com/jcgcristel)
