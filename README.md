@@ -37,11 +37,14 @@ On success you will see the message:
 
 These file can be found in the **/dist** folder.
 
-### Example
-![Site Preview](/assets/images/app-prev.png)
+### Generation Example
+![App Preview](/images/app-prev.png)
+
+### Application Screenshot
+![Site Preview](/images/site-prev.png)
 
 ### Demo
-https://youtu.be/LHfqCXgUueo
+https://youtu.be/FuGfBxWBgho
 
 ## Questions
 [jcgcristel's GitHub](https://github.com/jcgcristel)
