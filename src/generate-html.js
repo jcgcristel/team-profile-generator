@@ -2,8 +2,17 @@ import fs from 'fs';
 
 // creates html file and copies css
 export const generatePage = employees => {
+
+     
+
      writeHtml(generateHtml(employees))
-          .then(copyCss);
+          .then(writeHtmlResponse => {
+               console.log(writeHtmlResponse);
+          })
+          .then(copyCss)
+          .then(copyCssResponse => {
+               console.log(copyCssResponse);
+          });
 };
 
 // html generator
@@ -61,7 +70,7 @@ const generateCards = employees => {
                </div>
                <div class="card-body">
                     <p>Employee ID: </br><span>${employee.id}</span></p>
-                    <p>Email: </br><a href="to: ${employee.email}"><span>${employee.email}</span></a></p>
+                    <p>Email: </br><a href="mailto: ${employee.email}"><span>${employee.email}</span></a></p>
                     <p>${info}: </br><span>${infoDesc}</span></p>
                </div>
           </div>`;  
@@ -82,7 +91,7 @@ const writeHtml = html => {
               // if okay
               resolve({
                   ok: true,
-                  message: 'File Created!'
+                  message: 'index.html created!'
               });
           });
       });
@@ -98,7 +107,7 @@ const copyCss = () => {
   
               resolve({
                   ok: true,
-                  message: 'File  copied'
+                  message: 'style.css copied!'
               })
           })
       })
